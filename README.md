@@ -1,11 +1,11 @@
-## SC SYNTAX VSC
+## SC SYNTAX FOR VSC
 
-+ Visual Studio Code
-+ 
-  - TOTO:
-    * (this extension does the minimum sc highlighting correct)
++ <>
++ --- nearly there
+  - TODO:
+    * (this extension does the minimum needed sc highlighting correct)
     + tokenization not working as expected
-    - almost all wanted matches named as keyword.controls, ie. not great
+    - almost all wanted matches shows same coloe as keyword.controls, ie. not great
     - some regex catches and matches in wrong ways
 + ..
 
