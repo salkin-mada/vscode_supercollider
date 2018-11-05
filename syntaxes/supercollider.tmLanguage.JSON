@@ -1,0 +1,232 @@
+{
+	"fileTypes": "sc",
+	"foldingStartMarker": "{|\/*",
+	"foldingStopMarker": "}|*\/",
+	"keyEquivalent": "^~S",
+	"name": "supercollider",
+	"patterns": [
+		{
+			"include": "#scSynth"
+		},
+		{
+			"include": "#something"
+		},
+		{
+			"include": "#class"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#symbols, strings, numbers"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		}
+		
+	],
+	"repository": {
+		"scSynth": {
+			"patterns": [
+				{
+					"comment": "scArate",
+					"name": "keyword.control.supercollider",
+					"match": "[a-z][a-zA-Z0-9_]*\\.ar"
+				},
+				{
+					"comment": "scKrate",
+					"name": "keyword.control.supercollider",
+					"match": "[a-z][a-zA-Z0-9_]*\\.kr"
+				}
+			]
+		},
+		"something": {
+			"patterns": [
+				{
+					"begin": "\"",
+					"end": "\"",
+					"name": "string.quoted.double.supercollider",
+					"patterns": [
+						{
+							"match": "\\.",
+							"name": "constant.character.escape.supercollider"
+						}
+					]
+				},
+				{
+					"begin": "'",
+					"end": "'",
+					"name": "string.quoted.single.supercollider",
+					"patterns": [
+						{
+							"match": "\\.",
+							"name": "constant.character.escape.supercollider"
+						}
+					]
+				},
+				{
+					"match": "[a-z][a-zA-Z0-9_]*\\:",
+					"name": "string.quoted.single.supercollider"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "string.quoted.single.supercollider"
+						}
+					},
+					"match": "^\\s*\\+*\\s*([A-Z]{1}[a-zA-Z0-9_]*)\\s*\\:{1}\\s*([A-Z]{1}[a-zA-Z0-9_]*)\\s*\\{"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "string.quoted.single.supercollider"
+						}
+					},
+					"match": "^([A-Z_]{1}[a-zA-Z0-9_]*)[^a-zA-Z0-9_]"
+				},
+				{
+					"match": "\\|[a-zA-Z0-9\\#\\[\\]\"\\_\\=\\.\\(\\)[[:space:]]\\,]+\\|",
+					"name": "string.quoted.single.supercollider"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "keyword.control.supercollider"
+						}
+					},
+					"match": "[^a-zA-Z0-9]([A-Z_]{1}[a-zA-Z0-9_]*)[^a-zA-Z0-9_]"
+				},
+				{
+					"match": "\\[a-zA-Z0-9\\_]+",
+					"name": "keyword.control.supercollider"
+				},
+				{
+					"captures": {
+						"1": {
+							"name": "keyword.control.supercollider"
+						}
+					},
+					"match": "^\\s*(\\**[a-z]{1}[a-zA-Z0-9_]+)\\s*\\{"
+				},
+				{
+					"match": "\\~[a-zA-Z0-9]+",
+					"name": "variable.language.supercollider"
+				},
+				{
+					"match": "\/\/.*",
+					"name": "comment.single.supercollider"
+				},
+				{
+					"begin": "\/\\*",
+					"end": "\\*\/",
+					"name": "comment.multiline.supercollider"
+				}	
+			]
+		},
+		"class": {
+			"patterns": [
+				{	
+					"captures": {
+						"1": {
+							"name": "entity.name.class"
+						}
+					},
+					"match": "(([A-Z_]{1}[a-zA-Z0-9_]*)[^a-zA-Z0-9_])"	
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"comment": "Binaryoperator",
+					"name": "keyword.control.supercollider",
+					"match": "(min|max|round|trunc|atan2|hypot|hypotApx|ring1|ring2|ring3|ring4|sumsqr|difsqr|sqrsum|sqrdif|absdif|thresh|amclip|scaleneg|clip2|wrap2|fold2|excess)"
+				},
+				{
+					"comment": "Unaryoperator",
+					"name": "keyword.control.supercollider",
+					"match": "(neg|reciprocal|abs|floor|ceil|frac|sign|squared|cubed|sqrt|exp|midicps|cpsmidi|midiratio|ratiomidi|dbamp|ampdb|octcps|cpsoct|log|log2|log10|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|distort|softclip|isPositive|isNegative|isStrictlyPositive)"
+				},
+				{
+					"comment": "Binaryoperator",
+					"name": "keyword.control.supercollider",
+					"match": "(linlin|loglin|linlog)"
+				},
+				{
+					"name": "constant.numeric.supercollider",
+					"match": "(\\+|\\-|\\*)"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.single.supercollider",
+					"match": "(\/\/.*)"
+				},
+				{
+					"name": "comment.multiline.supercollider",
+					"begin": "(/\\*)",
+					"end": "\\*/"
+				}
+			]
+		},
+		"symbols, strings, numbers": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.supercollider",
+					"begin": "(\")",
+					"end": "(\")"
+				},
+				{
+					"name": "constant.character.escape.supercollider",
+					"match": "\\."
+				},
+				{
+					"name": "string.quoted.double.supercollider",
+					"begin": "(\\')",
+					"end": "(\\')"
+				},
+				{
+					"name": "constant.character.escape.supercollider",
+					"match": "\\."
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"comment": "scArg",
+					"name": "keyword.control.supercollider",
+					"match": "(\\s*arg\\s)"
+				},
+				{
+					"comment": "scVar",
+					"name": "keyword.control.supercollider",
+					"match": "(\\s*var\\s)"
+				},
+				{
+					"comment": "scClassVar",
+					"name": "keyword.control.supercollider",
+					"match": "(\\s*classvar\\s)"
+				},
+				{
+					"name": "keyword.control.supercollider",
+					"match": "(this|thisThread|thisMethod|thisFunction|thisProcess|true|false|inf|nil)"
+				},
+				{
+					"name": "keyword.control.supercollider",
+					"match": "(super|new|yield|break|rescue|return)"
+				},
+				{
+					"name": "keyword.control.supercollider",
+					"match": "(case|begin|do|forBy|loop|if|while|else)"
+				}
+			]
+		}
+	},
+	"scopeName": "source.supercollider"
+}

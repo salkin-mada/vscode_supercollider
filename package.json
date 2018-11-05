@@ -1,0 +1,26 @@
+{
+    "name": "supercollider_syntax",
+    "displayName": "supercollider_syntax",
+    "description": "A simple extension for sc syntax highlighting.",
+    "version": "0.0.2",
+    "publisher": "salkin-mada",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "supercollider",
+            "aliases": ["supercollider", "SC"],
+            "extensions": [".sc", ".scd"],
+            "configuration": "./supercollider.configuration.json"
+        }],
+        "grammars": [{
+            "language": "supercollider",
+            "scopeName": "source.supercollider",
+            "path": "./syntaxes/supercollider.tmLanguage.json"
+        }]
+    }
+}
