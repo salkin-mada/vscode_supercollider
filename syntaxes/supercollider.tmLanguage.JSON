@@ -25,6 +25,9 @@
 		},
 		{
 			"include": "#comments"
+		},
+		{
+			"include": "#bundle"
 		}
 		
 	],
@@ -131,7 +134,7 @@
 				{	
 					"captures": {
 						"1": {
-							"name": "entity.name.class"
+							"name": "entity.name.class.supercollider"
 						}
 					},
 					"match": "(([A-Z_]{1}[a-zA-Z0-9_]*)[^a-zA-Z0-9_])"	
@@ -156,7 +159,7 @@
 					"match": "(linlin|loglin|linlog)"
 				},
 				{
-					"name": "constant.numeric.supercollider",
+					"name": "constant.other.supercollider",
 					"match": "(\\+|\\-|\\*)"
 				}
 			]
@@ -214,16 +217,29 @@
 					"match": "(\\s*classvar\\s)"
 				},
 				{
-					"name": "keyword.control.supercollider",
-					"match": "(this|thisThread|thisMethod|thisFunction|thisProcess|true|false|inf|nil)"
+					"name": "constant.language.supercollider",
+					"match": "(true|false|inf|nil)"
 				},
 				{
-					"name": "keyword.control.supercollider",
+					"name": "variable.language.supercollider",
+					"match": "(this|thisThread|thisMethod|thisFunction|thisProcess)"
+				},
+				{
+					"name": "variable.language.supercollider",
 					"match": "(super|new|yield|break|rescue|return)"
 				},
 				{
-					"name": "keyword.control.supercollider",
+					"name": "variable.language.supercollider",
 					"match": "(case|begin|do|forBy|loop|if|while|else)"
+				}
+			]
+		},
+		"bundle": {
+			"patterns": [
+				{
+					"comment": "ruby bundle",
+					"match": "\\b(0[xX][0-9A-Fa-f](?>_?[0-9A-Fa-f])*|\\d(?>_?\\d)*(\\.(?![^[:space:][:digit:]])(?>_?\\d)*)?([eE][-+]?\\d(?>_?\\d)*)?|0[bB][01]+)\\b",
+					"name": "constant.numeric.supercollider"
 				}
 			]
 		}
