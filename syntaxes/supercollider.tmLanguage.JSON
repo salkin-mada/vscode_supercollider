@@ -1,5 +1,5 @@
 {
-	"fileTypes": "sc",
+	"fileTypes": ["sc", "scd"],
 	"foldingStartMarker": "{|\/*",
 	"foldingStopMarker": "}|*\/",
 	"keyEquivalent": "^~S",
@@ -18,7 +18,7 @@
 			"include": "#operators"
 		},
 		{
-			"include": "#symbols, strings, numbers"
+			"include": "#symbols"
 		},
 		{
 			"include": "#keywords"
@@ -177,35 +177,18 @@
 				}
 			]
 		},
-		"symbols, strings, numbers": {
+		"symbols": {
 			"patterns": [
 				{
-					"name": "string.quoted.double.supercollider",
-					"begin": "(\")",
-					"end": "(\")"
-				},
-				{
 					"name": "constant.character.escape.supercollider",
-					"match": "\\."
-				},
-				{
-					"name": "string.quoted.double.supercollider",
-					"begin": "(\\')",
-					"end": "(\\')"
-				},
-				{
-					"name": "constant.character.escape.supercollider",
-					"match": "\\."
+					"match": "(\\s*\\\\\\w*\\s)"
 				}
+
 			]
 		},
 		"keywords": {
 			"patterns": [
-				{
-					"comment": "scArg",
-					"name": "keyword.control.supercollider",
-					"match": "(\\s*arg\\s)"
-				},
+				
 				{
 					"comment": "scVar",
 					"name": "keyword.control.supercollider",
