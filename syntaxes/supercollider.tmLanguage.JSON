@@ -6,170 +6,217 @@
 	"name": "supercollider",
 	"patterns": [
 		{
-			"include": "#scSynth"
+			"include": "#whitespace"
 		},
 		{
-			"include": "#something"
+			"include": "#keyword"
 		},
 		{
-			"include": "#class"
+			"include": "#built-in"
 		},
 		{
 			"include": "#operators"
 		},
 		{
-			"include": "#symbols"
+			"include": "#number radix-float"
 		},
 		{
-			"include": "#keywords"
+			"include": "#number scale-degree"
 		},
 		{
-			"include": "#comments"
+			"include": "#number float"
 		},
 		{
-			"include": "#bundle"
+			"include": "#number hex-int"
+		},
+		{
+			"include": "#symbol symbol-arg"
+		},
+		{
+			"include": "#text name"
+		},
+		{
+			"include": "#class"
+		},
+		{
+			"include": "#primitive"
+		},
+		{
+			"include": "#symbol"
+		},
+		{
+			"include": "#char"
+		},
+		{
+			"include": "#env-var"
+		},
+		{
+			"include": "comment single-line-comment"
+		},
+		{
+			"include": "string"
+		},
+		{
+			"include": "text punctuation"
+		},
+		{
+			"include": "comment multi-line-comment"
+		},
+		{
+			"include": "text operator"
 		}
-		
 	],
 	"repository": {
-		"scSynth": {
+		"whitespace": {
 			"patterns": [
 				{
-					"comment": "scArate",
-					"name": "keyword.control.supercollider",
-					"match": "[a-z][a-zA-Z0-9_]*\\.ar"
-				},
-				{
-					"comment": "scKrate",
-					"name": "keyword.control.supercollider",
-					"match": "[a-z][a-zA-Z0-9_]*\\.kr"
+					"match": "(\\s+)"
 				}
 			]
 		},
-		"something": {
+		"keyword": {
 			"patterns": [
 				{
-					"begin": "\"",
-					"end": "\"",
-					"name": "string.quoted.double.supercollider",
-					"patterns": [
-						{
-							"match": "\\.",
-							"name": "constant.character.escape.supercollider"
-						}
-					]
-				},
-				{
-					"begin": "'",
-					"end": "'",
-					"name": "string.quoted.single.supercollider",
-					"patterns": [
-						{
-							"match": "\\.",
-							"name": "constant.character.escape.supercollider"
-						}
-					]
-				},
-				{
-					"match": "[a-z][a-zA-Z0-9_]*\\:",
-					"name": "string.quoted.single.supercollider"
-				},
-				{
-					"captures": {
-						"1": {
-							"name": "string.quoted.single.supercollider"
-						}
-					},
-					"match": "^\\s*\\+*\\s*([A-Z]{1}[a-zA-Z0-9_]*)\\s*\\:{1}\\s*([A-Z]{1}[a-zA-Z0-9_]*)\\s*\\{"
-				},
-				{
-					"captures": {
-						"1": {
-							"name": "string.quoted.single.supercollider"
-						}
-					},
-					"match": "^([A-Z_]{1}[a-zA-Z0-9_]*)[^a-zA-Z0-9_]"
-				},
-				{
-					"match": "\\|[a-zA-Z0-9\\#\\[\\]\"\\_\\=\\.\\(\\)[[:space:]]\\,]+\\|",
-					"name": "string.quoted.single.supercollider"
-				},
-				{
-					"captures": {
-						"1": {
-							"name": "keyword.control.supercollider"
-						}
-					},
-					"match": "[^a-zA-Z0-9]([A-Z_]{1}[a-zA-Z0-9_]*)[^a-zA-Z0-9_]"
-				},
-				{
-					"match": "\\[a-zA-Z0-9\\_]+",
-					"name": "keyword.control.supercollider"
-				},
-				{
-					"captures": {
-						"1": {
-							"name": "keyword.control.supercollider"
-						}
-					},
-					"match": "^\\s*(\\**[a-z]{1}[a-zA-Z0-9_]+)\\s*\\{"
-				},
-				{
-					"match": "\\~[a-zA-Z0-9]+",
-					"name": "variable.language.supercollider"
-				},
-				{
-					"match": "\/\/.*",
-					"name": "comment.single.supercollider"
-				},
-				{
-					"begin": "\/\\*",
-					"end": "\\*\/",
-					"name": "comment.multiline.supercollider"
-				}	
+					"name": "keyword.control.supercollider",
+					"match": "\\b(?:arg|classvar|const|super|this|var)\\s"
+				}
 			]
 		},
-		"class": {
+		"built-in": {
 			"patterns": [
-				{	
-					"captures": {
-						"1": {
-							"name": "entity.name.class.supercollider"
-						}
-					},
-					"match": "(([A-Z_]{1}[a-zA-Z0-9_]*)[^a-zA-Z0-9_])"	
+				{
+					"name": "variable.language.supercollider",
+					"match": "\\b(?:false|inf|nil|true|thisFunction|thisFunctionDef|thisMethod|thisProcess|thisThread|currentEnvironment|topEnvironment)\\s"
 				}
 			]
 		},
 		"operators": {
 			"patterns": [
 				{
-					"comment": "Binaryoperator",
-					"name": "keyword.control.supercollider",
-					"match": "(min|max|round|trunc|atan2|hypot|hypotApx|ring1|ring2|ring3|ring4|sumsqr|difsqr|sqrsum|sqrdif|absdif|thresh|amclip|scaleneg|clip2|wrap2|fold2|excess)"
+					"name": "variable.language.supercollider",
+					"match": "\\b(?:linlin|loglin|linlog)"
 				},
 				{
-					"comment": "Unaryoperator",
-					"name": "keyword.control.supercollider",
-					"match": "(neg|reciprocal|abs|floor|ceil|frac|sign|squared|cubed|sqrt|exp|midicps|cpsmidi|midiratio|ratiomidi|dbamp|ampdb|octcps|cpsoct|log|log2|log10|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|distort|softclip|isPositive|isNegative|isStrictlyPositive)"
+					"name": "variable.language.supercollider",
+					"match": "\\b(?:min|max|round|trunc|atan2|hypot|hypotApx|ring1|ring2|ring3|ring4|sumsqr|difsqr|sqrsum|sqrdif|absdif|thresh|amclip|scaleneg|clip2|wrap2|fold2|excess)\\s"
 				},
 				{
-					"comment": "Binaryoperator",
-					"name": "keyword.control.supercollider",
-					"match": "(linlin|loglin|linlog)"
+					"name": "variable.language.supercollider",
+					"match": "\\b(?:neg|reciprocal|abs|floor|ceil|frac|sign|squared|cubed|sqrt|exp|midicps|cpsmidi|midiratio|ratiomidi|dbamp|ampdb|octcps|cpsoct|log|log2|log10|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|distort|softclip|isPositive|isNegative|isStrictlyPositive)\\s"
 				},
 				{
-					"name": "constant.other.supercollider",
-					"match": "(\\+|\\-|\\*)"
+					"name": "variable.language.supercollider",
+					"match": "\\b(?:new|yield|break|rescue|return|case|begin|do|forBy|loop|if|while|else)\\s"
 				}
 			]
 		},
-		"comments": {
+		"number radix-float": {
+			"patterns": [
+				{
+					"name": "constant.numeric.supercollider",
+					"match": "\\b\\d+r[0-9a-zA-Z]*(\\.[0-9A-Z]*)?"
+				}
+			]
+		},
+		"number scale-degree": {
+			"patterns": [
+				{
+					"name": "constant.numeric.supercollider",
+					"match": "\\b((\\d+(\\.\\d+)?([eE][-+]?\\d+)?(pi)?)|pi)\\b"
+				}
+			]
+		},
+		"number hex-int": {
+			"patterns": [
+				{
+					"name": "constant.numeric.supercollider",
+					"match": "\\b0x(\\d|[a-f]|[A-F])+"
+				}
+			]
+		},
+		"symbol symbol-arg": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.supercollider",
+					"match": "\b[A-Za-z_]\\w*\\:"
+				}
+
+			]
+		},
+		"text name": {
+			"patterns": [
+				{
+					"name": "text.supercollider",
+					"match": "[a-z]\\w*"
+				}
+			]
+		},
+		"class": {
+			"patterns": [
+				{	
+					"name": "entity.name.class.supercollider",
+					"match": "\\b([A-Z]\\w*)"	
+				}
+			]
+		},
+		"primitive": {
+			"patterns": [
+				{	
+					"name": "entity.name.class.supercollider",
+					"match": "\\b_\\w+"	
+				}
+			]
+		},
+		"symbol": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.supercollider",
+					"match": "(\\s*\\\\\\w*\\s)"
+				}
+			]
+		},
+		"char": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.supercollider",
+					"match": "^\\$\\?."
+				}
+			]
+		},
+		"env-var": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.supercollider",
+					"match": "^~\\w+"
+				}
+			]
+		},
+		"comment single-line-comment": {
 			"patterns": [
 				{
 					"name": "comment.single.supercollider",
-					"match": "(\/\/.*)"
-				},
+					"match": "^\\/\\/[^\\r\\n]*"
+				}
+			]
+		},
+		"string": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.supercollider",
+					"match": "\\\"(?:[^\\]|\\.)*?(?:\"|$)"
+				}
+			]
+		},
+		"text punctuation": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.supercollider",
+					"match": "^[-.,;#()\\[\\]{}]"
+				}
+			]
+		},
+		"comment multi-line-comment": {
+			"patterns": [
 				{
 					"name": "comment.multiline.supercollider",
 					"begin": "(/\\*)",
@@ -177,52 +224,11 @@
 				}
 			]
 		},
-		"symbols": {
+		"text operator": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.supercollider",
-					"match": "(\\s*\\\\\\w*\\s)"
-				}
-
-			]
-		},
-		"keywords": {
-			"patterns": [
-				
-				{
-					"comment": "scVar",
-					"name": "keyword.control.supercollider",
-					"match": "(\\s*var\\s)"
-				},
-				{
-					"comment": "scClassVar",
-					"name": "keyword.control.supercollider",
-					"match": "(\\s*classvar\\s)"
-				},
-				{
-					"name": "constant.language.supercollider",
-					"match": "(true|false|inf|nil)"
-				},
-				{
-					"name": "variable.language.supercollider",
-					"match": "(this|thisThread|thisMethod|thisFunction|thisProcess)"
-				},
-				{
-					"name": "variable.language.supercollider",
-					"match": "(super|new|yield|break|rescue|return)"
-				},
-				{
-					"name": "variable.language.supercollider",
-					"match": "(case|begin|do|forBy|loop|if|while|else)"
-				}
-			]
-		},
-		"bundle": {
-			"patterns": [
-				{
-					"comment": "ruby bundle",
-					"match": "\\b(0[xX][0-9A-Fa-f](?>_?[0-9A-Fa-f])*|\\d(?>_?\\d)*(\\.(?![^[:space:][:digit:]])(?>_?\\d)*)?([eE][-+]?\\d(?>_?\\d)*)?|0[bB][01]+)\\b",
-					"name": "constant.numeric.supercollider"
+					"name": "string.quoted.single.supercollider",
+					"match": "^[+\\-*/&\\|\\^%<>=!?]+"
 				}
 			]
 		}
