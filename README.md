@@ -1,13 +1,5 @@
 ## SuperCollider syntax for Visual Studio Code
-this extension does the minimum needed sc highlighting correct and a lot not..
-
-pull requests yes please
-
-  - TODO:
-    + tokenization not working as expected
-    - almost all wanted matches shows same color as keyword.controls, ie. feelings: not great
-    - some regex catches and matches in wrong ways
-+ ..
+this extension does the minimum needed sc highlighting correct
 
 place in ~\.vscode\extensions\
 
@@ -15,7 +7,7 @@ place in ~\.vscode\extensions\
 
 ## Known Issues
 
-quite alot
+quite alot, not collecting correctly i.e. break; return;
 
 ## Release Notes
 
@@ -26,6 +18,10 @@ not working
 ### 0.0.2
 
 barely working
+
+### 0.0.3
+
+okay, soon to release
 
 ---------------------------------------------------------------------------------------
 
