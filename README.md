@@ -3,7 +3,7 @@ this extension does the minimum needed sc highlighting correct
 
 place in ~\.vscode\extensions\
 
-![example](./images/example.png "example")
+![example](./images/syntax_test.png "example")
 
 ## Known Issues
 
