@@ -171,7 +171,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.supercollider",
-					"match": "(\\s*\\\\\\w*\\s)"
+					"match": "(\\s*\\\\\\w*)"
 				}
 			]
 		},
