@@ -1,7 +1,7 @@
 {
-	"fileTypes": ["sc", "scd"],
-	"foldingStartMarker": "{|\/*",
-	"foldingStopMarker": "}|*\/",
+	"fileTypes": ["sc", "scd", "quark"],
+	"foldingStartMarker": "\\{|\\/\\*",
+	"foldingStopMarker": "\\}|\\*\\/",
 	"keyEquivalent": "^~S",
 	"name": "supercollider",
 	"patterns": [
@@ -94,11 +94,11 @@
 			"patterns": [
 				{
 					"name": "variable.language.supercollider",
-					"match": "\\b(?:linlin|loglin|linlog)"
+					"match": "\\b(?:linlin|loglin|linlog)\\b"
 				},
 				{
 					"name": "variable.language.supercollider",
-					"match": "\\b(?:min|max|round|trunc|atan2|hypot|hypotApx|ring1|ring2|ring3|ring4|sumsqr|difsqr|sqrsum|sqrdif|absdif|thresh|amclip|scaleneg|clip2|wrap2|fold2|excess)\\s"
+					"match": "\\b(?:min|max|round|trunc|atan2|hypot|hypotApx|ring1|ring2|ring3|ring4|sumsqr|difsqr|sqrsum|sqrdif|absdif|thresh|amclip|scaleneg|clip2|wrap2|fold2|excess)\\b"
 				},
 				{
 					"name": "variable.language.supercollider",
@@ -106,7 +106,7 @@
 				},
 				{
 					"name": "variable.language.supercollider",
-					"match": "\\b(?:new|yield|break|rescue|return|case|begin|do|forBy|loop|if|while|else)\\s"
+					"match": "\\b(?:new|yield|break|rescue|return|case|begin|do|forBy|loop|if|while|else)\\b"
 				}
 			]
 		},
@@ -138,7 +138,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.supercollider",
-					"match": "\b[A-Za-z_]\\w*\\:"
+					"match": "\\b[A-Za-z_]\\w*\\:"
 				}
 
 			]
@@ -186,7 +186,7 @@
 		"env-var": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.supercollider",
+					"name": "variable.language.supercollider",
 					"match": "^~\\w+"
 				}
 			]
