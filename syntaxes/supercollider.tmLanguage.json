@@ -33,9 +33,6 @@
 			"include": "#symbol symbol-arg"
 		},
 		{
-			"include": "#text name"
-		},
-		{
 			"include": "#class"
 		},
 		{
@@ -64,6 +61,9 @@
 		},
 		{
 			"include": "text operator"
+		},
+		{
+			"include": "#text name"
 		}
 	],
 	"repository": {
@@ -93,19 +93,19 @@
 		"operators": {
 			"patterns": [
 				{
-					"name": "variable.language.supercollider",
+					"name": "variable.other.supercollider",
 					"match": "\\b(?:linlin|loglin|linlog)\\b"
 				},
 				{
-					"name": "variable.language.supercollider",
+					"name": "variable.other.supercollider",
 					"match": "\\b(?:min|max|round|trunc|atan2|hypot|hypotApx|ring1|ring2|ring3|ring4|sumsqr|difsqr|sqrsum|sqrdif|absdif|thresh|amclip|scaleneg|clip2|wrap2|fold2|excess)\\b"
 				},
 				{
-					"name": "variable.language.supercollider",
+					"name": "variable.other.supercollider",
 					"match": "\\b(?:neg|reciprocal|abs|floor|ceil|frac|sign|squared|cubed|sqrt|exp|midicps|cpsmidi|midiratio|ratiomidi|dbamp|ampdb|octcps|cpsoct|log|log2|log10|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|distort|softclip|isPositive|isNegative|isStrictlyPositive)\\s"
 				},
 				{
-					"name": "variable.language.supercollider",
+					"name": "variable.other.supercollider",
 					"match": "\\b(?:new|yield|break|rescue|return|case|begin|do|forBy|loop|if|while|else)\\b"
 				}
 			]
@@ -137,7 +137,7 @@
 		"symbol symbol-arg": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.supercollider",
+					"name": "entity.name.function.supercollider",
 					"match": "\\b[A-Za-z_]\\w*\\:"
 				}
 
@@ -146,7 +146,6 @@
 		"text name": {
 			"patterns": [
 				{
-					"name": "text.supercollider",
 					"match": "[a-z]\\w*"
 				}
 			]
@@ -162,7 +161,7 @@
 		"primitive": {
 			"patterns": [
 				{	
-					"name": "entity.name.class.supercollider",
+					"name": "entity.name.function.supercollider",
 					"match": "\\b_\\w+"	
 				}
 			]
@@ -170,7 +169,7 @@
 		"symbol": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.supercollider",
+					"name": "variable.language.supercollider",
 					"match": "(\\s*\\\\\\w*)"
 				}
 			]
@@ -186,7 +185,7 @@
 		"env-var": {
 			"patterns": [
 				{
-					"name": "variable.language.supercollider",
+					"name": "constant.character.escape.supercollider",
 					"match": "^~\\w+"
 				}
 			]
@@ -194,7 +193,7 @@
 		"comment single-line-comment": {
 			"patterns": [
 				{
-					"name": "comment.single.supercollider",
+					"name": "variable.language.supercollider",
 					"match": "^\\/\\/[^\\r\\n]*"
 				}
 			]
