@@ -9,9 +9,6 @@
 			"include": "#whitespace"
 		},
 		{
-			"include": "#line-args"
-		},
-		{
 			"include": "#keyword"
 		},
 		{
@@ -69,7 +66,13 @@
 			"include": "#audio"
 		},
 		{
+			"include": "#special-audio"
+		},
+		{
 			"include": "text operator"
+		},
+		{
+			"include": "#line-args"
 		},
 		{
 			"include": "#text name"
@@ -111,7 +114,7 @@
 				},
 				{
 					"name": "variable.other.supercollider",
-					"match": "\\b(?:neg|reciprocal|abs|floor|ceil|frac|sign|squared|cubed|sqrt|exp|midicps|cpsmidi|midiratio|ratiomidi|dbamp|ampdb|octcps|cpsoct|log|log2|log10|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|distort|softclip|isPositive|isNegative|isStrictlyPositive)\\s"
+					"match": "\\b(?:neg|reciprocal|abs|floor|ceil|frac|sign|squared|cubed|sqrt|exp|midicps|cpsmidi|midiratio|ratiomidi|dbamp|ampdb|octcps|cpsoct|log|log2|log10|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|distort|softclip|isPositive|isNegative|isStrictlyPositive)\\b"
 				},
 				{
 					"name": "variable.other.supercollider",
@@ -195,7 +198,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.supercollider",
-					"match": "^~\\w+"
+					"match": "(~\\w+)"
 				}
 			]
 		},
@@ -249,8 +252,16 @@
 		"audio": {
 			"patterns": [
 				{
-					"name": "variable.other.supercollider",
-					"match": "\\b(?:play|playN|plot|scope|asBuffer)\\b"
+					"name": "string.quoted.double.supercollider",
+					"match": "\\b(?<=\\.)(?:play|playN|plot|scope|asBuffer)\\b"
+				}
+			]
+		},
+		"special-audio": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.supercollider",
+					"match": "\\b(?:play|plot|scope)(?=\\{)\\b"
 				}
 			]
 		},
@@ -261,12 +272,13 @@
 				}
 			]
 		},
-		"line args": {
+		"line-args": {
 			"patterns": [
-				{
-					"match": "\\|[a-zA-Z0-9\\#\\[\\]\\\"\\_\\=\\.\\(\\)[[:space:]]\\,]+\\|",
-					"name": "variable.parameter.function.supercollider"
-				}
+            {
+				"name": "keyword.control.supercollider",
+				"match": "(?<!\\|)\\|(?!\\|)"
+            }
+          
 			]
 		}
 	},

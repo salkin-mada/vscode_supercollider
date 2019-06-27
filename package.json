@@ -1,20 +1,31 @@
 {
-    "name": "supercollider_syntax",
-    "displayName": "supercollider_syntax",
-    "description": "A simple extension for sc syntax highlighting.",
-    "version": "0.0.2",
+    "name": "language-supercollider",
+    "displayName": "language-supercollider",
+    "description": "SuperCollider syntax grammars for VSCode",
+    "version": "0.0.4",
     "publisher": "salkin-mada",
+    "homepage": "https://github.com/salkin-mada/vscode_supercollider/blob/master/README.md",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.5.0"
     },
     "categories": [
         "Programming Languages"
     ],
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/salkin-mada/vscode_supercollider"
+    },
+    "activationEvents": [
+        "onLanguage:supercollider"
+    ],
+    "main": "./extension",
+    "icon": "./icon.png",
     "contributes": {
         "languages": [{
             "id": "supercollider",
-            "aliases": ["supercollider", "SC"],
-            "extensions": [".sc", ".scd"],
+            "aliases": ["SuperCollider", "supercollider", "SC", "sc"],
+            "extensions": [".sc", ".scd", ".schelp", ".quark"],
             "configuration": "./supercollider.configuration.json"
         }],
         "grammars": [{
@@ -22,5 +33,9 @@
             "scopeName": "source.supercollider",
             "path": "./syntaxes/supercollider.tmLanguage.json"
         }]
-    }
+    },
+    "devDependencies": {
+		"typescript": "^2.6.1",
+		"vscode": "^1.1.6"
+	}
 }
