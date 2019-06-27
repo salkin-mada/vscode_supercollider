@@ -9,6 +9,9 @@
 			"include": "#whitespace"
 		},
 		{
+			"include": "#line-args"
+		},
+		{
 			"include": "#keyword"
 		},
 		{
@@ -48,16 +51,22 @@
 			"include": "#env-var"
 		},
 		{
-			"include": "comment single-line-comment"
+			"include": "#comment single-line-comment"
 		},
 		{
-			"include": "string"
+			"include": "#symbol-single-quote"
+		},
+		{
+			"include": "#string-double"
 		},
 		{
 			"include": "text punctuation"
 		},
 		{
 			"include": "comment multi-line-comment"
+		},
+		{
+			"include": "#audio"
 		},
 		{
 			"include": "text operator"
@@ -193,18 +202,32 @@
 		"comment single-line-comment": {
 			"patterns": [
 				{
-					"name": "variable.language.supercollider",
-					"match": "^\\/\\/[^\\r\\n]*"
+					"match": "\\/\\/.*",
+					"name": "comment.single.supercollider"
 				}
 			]
 		},
-		"string": {
-			"patterns": [
-				{
-					"name": "string.quoted.single.supercollider",
-					"match": "\\\"(?:[^\\]|\\.)*?(?:\"|$)"
-				}
-			]
+		"symbol-single-quote": {
+			"begin": "'",
+          "end": "'",
+          "name": "variable.language.supercollider",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "variable.language.supercollider"
+            }
+          ]
+		},
+		"string-double": {
+			"begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.supercollider",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.supercollider"
+            }
+          ]
 		},
 		"text punctuation": {
 			"patterns": [
@@ -218,16 +241,31 @@
 			"patterns": [
 				{
 					"name": "comment.multiline.supercollider",
-					"begin": "(/\\*)",
-					"end": "\\*/"
+					"begin": "\\/\\*",
+          			"end": "\\*\\/"
+				}
+			]
+		},
+		"audio": {
+			"patterns": [
+				{
+					"name": "variable.other.supercollider",
+					"match": "\\b(?:play|playN|plot|scope|asBuffer)\\b"
 				}
 			]
 		},
 		"text operator": {
 			"patterns": [
 				{
-					"name": "string.quoted.single.supercollider",
 					"match": "^[+\\-*/&\\|\\^%<>=!?]+"
+				}
+			]
+		},
+		"line args": {
+			"patterns": [
+				{
+					"match": "\\|[a-zA-Z0-9\\#\\[\\]\\\"\\_\\=\\.\\(\\)[[:space:]]\\,]+\\|",
+					"name": "variable.parameter.function.supercollider"
 				}
 			]
 		}
