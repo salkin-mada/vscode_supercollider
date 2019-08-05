@@ -106,7 +106,7 @@
 			"patterns": [
 				{
 					"name": "variable.other.supercollider",
-					"match": "\\b(?:linlin|loglin|linlog)\\b"
+					"match": "\\b(?:linlin|explin|linexp|expexp)\\b"
 				},
 				{
 					"name": "variable.other.supercollider",
