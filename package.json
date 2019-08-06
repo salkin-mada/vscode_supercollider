@@ -1,41 +1,60 @@
 {
-    "name": "language-supercollider",
-    "displayName": "language-supercollider",
-    "description": "SuperCollider syntax grammars for VSCode",
-    "version": "0.0.4",
-    "publisher": "salkin-mada",
-    "homepage": "https://github.com/salkin-mada/vscode_supercollider/blob/master/README.md",
-    "license": "MIT",
-    "engines": {
-        "vscode": "^1.5.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "repository": {
+	"name": "language-supercollider",
+	"displayName": "language-supercollider",
+	"description": "SuperCollider syntax grammars for VSCode",
+	"version": "0.0.4",
+	"publisher": "salkin-mada",
+	"homepage": "https://github.com/salkin-mada/vscode_supercollider/blob/master/README.md",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"repository": {
 		"type": "git",
 		"url": "https://github.com/salkin-mada/vscode_supercollider"
-    },
-    "activationEvents": [
-        "onLanguage:supercollider"
-    ],
-    "main": "./extension",
-    "icon": "./icon.png",
-    "contributes": {
-        "languages": [{
-            "id": "supercollider",
-            "aliases": ["SuperCollider", "supercollider", "SC", "sc"],
-            "extensions": [".sc", ".scd", ".schelp", ".quark"],
-            "configuration": "./supercollider.configuration.json"
-        }],
-        "grammars": [{
-            "language": "supercollider",
-            "scopeName": "source.supercollider",
-            "path": "./syntaxes/supercollider.tmLanguage.json"
-        }]
-    },
-    "devDependencies": {
+	},
+	"activationEvents": [
+		"onLanguage:supercollider"
+	],
+	"main": "./extension",
+	"icon": "./icon.png",
+	"contributes": {
+		"languages": [
+			{
+				"id": "supercollider",
+				"aliases": [
+					"SuperCollider",
+					"supercollider",
+					"SC",
+					"sc"
+				],
+				"extensions": [
+					".sc",
+					".scd",
+					".schelp",
+					".quark"
+				],
+				"configuration": "./supercollider.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "supercollider",
+				"scopeName": "source.supercollider",
+				"path": "./syntaxes/supercollider.tmLanguage.json"
+			}
+		]
+	},
+	"devDependencies": {
 		"typescript": "^2.6.1",
 		"vscode": "^1.1.6"
+	},
+	"__metadata": {
+		"id": "e97e3764-32ee-46ae-8e1f-46f99613ca2c",
+		"publisherDisplayName": "salkin-mada",
+		"publisherId": "69908bf4-4bc5-49fb-961b-1e60470a9f3a"
 	}
 }
