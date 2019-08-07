@@ -1,0 +1,286 @@
+{
+	"fileTypes": ["sc", "scd", "quark"],
+	"foldingStartMarker": "\\{|\\/\\*",
+	"foldingStopMarker": "\\}|\\*\\/",
+	"keyEquivalent": "^~S",
+	"name": "supercollider",
+	"patterns": [
+		{
+			"include": "#whitespace"
+		},
+		{
+			"include": "#keyword"
+		},
+		{
+			"include": "#built-in"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#number radix-float"
+		},
+		{
+			"include": "#number scale-degree"
+		},
+		{
+			"include": "#number float"
+		},
+		{
+			"include": "#number hex-int"
+		},
+		{
+			"include": "#symbol symbol-arg"
+		},
+		{
+			"include": "#class"
+		},
+		{
+			"include": "#primitive"
+		},
+		{
+			"include": "#symbol"
+		},
+		{
+			"include": "#char"
+		},
+		{
+			"include": "#env-var"
+		},
+		{
+			"include": "#comment single-line-comment"
+		},
+		{
+			"include": "#symbol-single-quote"
+		},
+		{
+			"include": "#string-double"
+		},
+		{
+			"include": "text punctuation"
+		},
+		{
+			"include": "comment multi-line-comment"
+		},
+		{
+			"include": "#audio"
+		},
+		{
+			"include": "#special-audio"
+		},
+		{
+			"include": "text operator"
+		},
+		{
+			"include": "#line-args"
+		},
+		{
+			"include": "#text name"
+		}
+	],
+	"repository": {
+		"whitespace": {
+			"patterns": [
+				{
+					"match": "(\\s+)"
+				}
+			]
+		},
+		"keyword": {
+			"patterns": [
+				{
+					"name": "keyword.control.supercollider",
+					"match": "\\b(?:arg|classvar|const|super|this|var)\\s"
+				}
+			]
+		},
+		"built-in": {
+			"patterns": [
+				{
+					"name": "variable.language.supercollider",
+					"match": "\\b(?:false|inf|nil|true|thisFunction|thisFunctionDef|thisMethod|thisProcess|thisThread|currentEnvironment|topEnvironment)\\s"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "variable.other.supercollider",
+					"match": "\\b(?:linlin|explin|linexp|expexp)\\b"
+				},
+				{
+					"name": "variable.other.supercollider",
+					"match": "\\b(?:min|max|round|trunc|atan2|hypot|hypotApx|ring1|ring2|ring3|ring4|sumsqr|difsqr|sqrsum|sqrdif|absdif|thresh|amclip|scaleneg|clip2|wrap2|fold2|excess)\\b"
+				},
+				{
+					"name": "variable.other.supercollider",
+					"match": "\\b(?:neg|reciprocal|abs|floor|ceil|frac|sign|squared|cubed|sqrt|exp|midicps|cpsmidi|midiratio|ratiomidi|dbamp|ampdb|octcps|cpsoct|log|log2|log10|sin|cos|tan|asin|acos|atan|sinh|cosh|tanh|distort|softclip|isPositive|isNegative|isStrictlyPositive)\\b"
+				},
+				{
+					"name": "variable.other.supercollider",
+					"match": "\\b(?:new|yield|break|rescue|return|case|begin|do|forBy|loop|if|while|else)\\b"
+				}
+			]
+		},
+		"number radix-float": {
+			"patterns": [
+				{
+					"name": "constant.numeric.supercollider",
+					"match": "\\b\\d+r[0-9a-zA-Z]*(\\.[0-9A-Z]*)?"
+				}
+			]
+		},
+		"number scale-degree": {
+			"patterns": [
+				{
+					"name": "constant.numeric.supercollider",
+					"match": "\\b((\\d+(\\.\\d+)?([eE][-+]?\\d+)?(pi)?)|pi)\\b"
+				}
+			]
+		},
+		"number hex-int": {
+			"patterns": [
+				{
+					"name": "constant.numeric.supercollider",
+					"match": "\\b0x(\\d|[a-f]|[A-F])+"
+				}
+			]
+		},
+		"symbol symbol-arg": {
+			"patterns": [
+				{
+					"name": "entity.name.function.supercollider",
+					"match": "\\b[A-Za-z_]\\w*\\:"
+				}
+
+			]
+		},
+		"text name": {
+			"patterns": [
+				{
+					"match": "[a-z]\\w*"
+				}
+			]
+		},
+		"class": {
+			"patterns": [
+				{	
+					"name": "entity.name.class.supercollider",
+					"match": "\\b([A-Z]\\w*)"	
+				}
+			]
+		},
+		"primitive": {
+			"patterns": [
+				{	
+					"name": "entity.name.function.supercollider",
+					"match": "\\b_\\w+"	
+				}
+			]
+		},
+		"symbol": {
+			"patterns": [
+				{
+					"name": "variable.language.supercollider",
+					"match": "(\\s*\\\\\\w*)"
+				}
+			]
+		},
+		"char": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.supercollider",
+					"match": "^\\$\\?."
+				}
+			]
+		},
+		"env-var": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.supercollider",
+					"match": "(~\\w+)"
+				}
+			]
+		},
+		"comment single-line-comment": {
+			"patterns": [
+				{
+					"match": "\\/\\/.*",
+					"name": "comment.single.supercollider"
+				}
+			]
+		},
+		"symbol-single-quote": {
+			"begin": "'",
+          "end": "'",
+          "name": "variable.language.supercollider",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "variable.language.supercollider"
+            }
+          ]
+		},
+		"string-double": {
+			"begin": "\"",
+          "end": "\"",
+          "name": "string.quoted.double.supercollider",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.supercollider"
+            }
+          ]
+		},
+		"text punctuation": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.supercollider",
+					"match": "^[-.,;#()\\[\\]{}]"
+				}
+			]
+		},
+		"comment multi-line-comment": {
+			"patterns": [
+				{
+					"name": "comment.multiline.supercollider",
+					"begin": "\\/\\*",
+          			"end": "\\*\\/"
+				}
+			]
+		},
+		"audio": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.supercollider",
+					"match": "\\b(?<=\\.)(?:play|playN|plot|scope|asBuffer)\\b"
+				}
+			]
+		},
+		"special-audio": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.supercollider",
+					"match": "\\b(?:play|plot|scope)(?=\\{)\\b"
+				}
+			]
+		},
+		"text operator": {
+			"patterns": [
+				{
+					"match": "^[+\\-*/&\\|\\^%<>=!?]+"
+				}
+			]
+		},
+		"line-args": {
+			"patterns": [
+            {
+				"name": "keyword.control.supercollider",
+				"match": "(?<!\\|)\\|(?!\\|)"
+            }
+          
+			]
+		}
+	},
+	"scopeName": "source.supercollider"
+}
