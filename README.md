@@ -7,6 +7,7 @@ SuperCollider syntax grammars for VSCode
 the language-supercollider extension is an enhanced flavor of [SuperCollider](https://supercollider.github.io/) syntax highlighting for [VS Code](https://code.visualstudio.com/).
 
 converted from the supercollider-source with some additions
+https://github.com/supercollider/supercollider/blob/develop/HelpSource/editor.js
 
 install from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode) or clone/place this repo in ~\.vscode\extensions\
 
@@ -16,8 +17,7 @@ The language (sclang) communicates via Open Sound Control with one or more synth
 
 This extensions does not include any REPL (language shell) or interaction with sclang. This is just for editing SuperCollider code.
 
-
-Tested on Linux (Debian, Ubuntu), MacOs and Windows.
+Possibly redundant; this extension is tested on Linux (Debian, Ubuntu), MacOs and Windows.
 
 ![example1](images/example1.png "example1")
 ![example2](images/example2.png "example2")
