@@ -60,7 +60,7 @@
 			"include": "text punctuation"
 		},
 		{
-			"include": "comment multi-line-comment"
+			"include": "#comment multi-line-comment"
 		},
 		{
 			"include": "#audio"
@@ -223,11 +223,11 @@
           	"end": "\"",
           	"name": "string.quoted.double.supercollider",
           	"patterns": [
-            {
-              "match": "\\\\.",
-              "name": "constant.character.escape.supercollider"
-            }
-          ]
+            	{
+            		"match": "\\\\.",
+              		"name": "constant.character.escape.supercollider"
+            	}
+          	]
 		},
 		"text punctuation": {
 			"patterns": [
@@ -238,13 +238,15 @@
 			]
 		},
 		"comment multi-line-comment": {
-			"patterns": [
-				{
-					"name": "comment.multiline.supercollider",
-					"begin": "\\/\\*",
-          			"end": "\\*\\/"
-				}
-			]
+			"begin": "\\/\\*",
+         	"end": "\\*\\/",
+          	"name": "comment.multiline.supercollider",
+          	"patterns": [
+            	{
+            		"match": "\\\\.",
+              		"name": "constant.character.escape.supercollider"
+            	}
+          	]
 		},
 		"audio": {
 			"patterns": [
@@ -271,11 +273,10 @@
 		},
 		"pipe-args": {
 			"patterns": [
-            {
-				"name": "keyword.control.supercollider",
-				"match": "(?<!\\|)\\|(?!\\|)"
-            }
-          
+           		{
+					"name": "keyword.control.supercollider",
+					"match": "(?<!\\|)\\|(?!\\|)"
+            	}
 			]
 		}
 	},
