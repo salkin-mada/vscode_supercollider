@@ -211,21 +211,18 @@
 			]
 		},
 		"symbol-single-quote": {
-			"begin": "'",
-          "end": "'",
-          "name": "variable.language.supercollider",
-          "patterns": [
+          	"patterns": [
             {
-              "match": "\\\\.",
+              "match": "'(?:[^\\\\]|\\\\.)*?(?:'|$)",
               "name": "variable.language.supercollider"
             }
           ]
 		},
 		"string-double": {
 			"begin": "\"",
-          "end": "\"",
-          "name": "string.quoted.double.supercollider",
-          "patterns": [
+          	"end": "\"",
+          	"name": "string.quoted.double.supercollider",
+          	"patterns": [
             {
               "match": "\\\\.",
               "name": "constant.character.escape.supercollider"
