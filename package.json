@@ -2,7 +2,7 @@
 	"name": "language-supercollider",
 	"displayName": "language-supercollider",
 	"description": "SuperCollider syntax grammars for VSCode",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"publisher": "salkin-mada",
 	"homepage": "https://github.com/salkin-mada/vscode_supercollider/blob/master/README.md",
 	"license": "MIT",
