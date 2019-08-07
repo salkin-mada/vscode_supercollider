@@ -20,7 +20,7 @@
 		"onLanguage:supercollider"
 	],
 	"main": "./extension",
-	"icon": "./icon.png",
+	"icon": "icon.png",
 	"contributes": {
 		"languages": [
 			{
