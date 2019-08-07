@@ -19,6 +19,8 @@ This extensions does not include any REPL (language shell) or interaction with s
 
 Possibly redundant; this extension is tested on Linux (Debian, Ubuntu), MacOs and Windows.
 
+**Enjoy!**
+
 ![example1](images/example1.png "example1")
 ![example2](images/example2.png "example2")
 ![example3](images/example3.png "example3")
@@ -47,8 +49,9 @@ publish to visual studio marketplace
 
 ### 0.0.5
 
-fixed misc regex bugs
+added working $ (char) pattern,
+fixed single quote symbol bug ('symbol'),
+fixed keyword bug (ex. this.)
+fixed multiline comment bug
 
 ---------------------------------------------------------------------------------------
-
-**Enjoy!**
