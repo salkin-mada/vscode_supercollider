@@ -20,8 +20,8 @@ Possibly redundant; this extension is tested on Linux (Debian, Ubuntu), MacOs an
 
 **Enjoy!**
 
-![example](images\exampleMonokai.png "Monokai")
-![example](images\exampleSolarizedLight.png "SolarizedLight")
+![example](images/exampleMonokai.png "Monokai")
+![example](images/exampleSolarizedLight.png "SolarizedLight")
 
 ## Known Issues
 
@@ -47,9 +47,6 @@ publish to visual studio marketplace
 
 ### 0.0.5
 
-added working $ (char) pattern,
-fixed single quote symbol bug ('symbol'),
-fixed keyword bug (ex. this.)
-fixed multiline comment bug
+added working $ (char) pattern and fixed: single quote symbol bug ('symbol'), keyword bug (ex. this.), multiline comment bug
 
 ---------------------------------------------------------------------------------------
