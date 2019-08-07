@@ -8,16 +8,16 @@ the language-supercollider extension is an enhanced flavor of [SuperCollider](ht
 
 converted from the supercollider-source with some additions
 
-install from [Visual Studio Marketplace](https://marketplace.visualstudio.com) or clone/place this repo in ~\.vscode\extensions\
+install from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode) or clone/place this repo in ~\.vscode\extensions\
 
 [SuperCollider](https://supercollider.github.io/) is a programming language for real time audio synthesis and algorithmic composition.
 
 The language (sclang) communicates via Open Sound Control with one or more synthesis servers. The SuperCollider synthesis server runs in a separate process or even on a separate machine so it is ideal for realtime networked music.
 
-Does not include any REPL (language shell) or interaction with sclang. This is just for editing SuperCollider code.
+This extensions does not include any REPL (language shell) or interaction with sclang. This is just for editing SuperCollider code.
 
 
-This extension is tested on Linux and Windows.
+Tested on Linux (Debian, Ubuntu), MacOs and Windows.
 
 ![example1](images/example1.png "example1")
 ![example2](images/example2.png "example2")
@@ -25,7 +25,7 @@ This extension is tested on Linux and Windows.
 
 ## Known Issues
 
-non
+At the publishing moment non is known. If you find any please open an issue in the github repo
 
 ## Release Notes
 
@@ -44,6 +44,10 @@ working okay, soon to release
 ### 0.0.4
 
 publish to visual studio marketplace
+
+### 0.0.5
+
+fixed misc regex bugs
 
 ---------------------------------------------------------------------------------------
 
