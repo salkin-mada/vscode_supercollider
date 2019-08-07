@@ -90,7 +90,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.supercollider",
-					"match": "\\b(?:arg|classvar|const|super|this|var)\\s"
+					"match": "\\b(?:arg|classvar|const|super|this|var)\\b"
 				}
 			]
 		},
@@ -98,7 +98,7 @@
 			"patterns": [
 				{
 					"name": "variable.language.supercollider",
-					"match": "\\b(?:false|inf|nil|true|thisFunction|thisFunctionDef|thisMethod|thisProcess|thisThread|currentEnvironment|topEnvironment)\\s"
+					"match": "\\b(?:false|inf|nil|true|thisFunction|thisFunctionDef|thisMethod|thisProcess|thisThread|currentEnvironment|topEnvironment)\\b"
 				}
 			]
 		},
