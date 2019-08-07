@@ -3,7 +3,7 @@ Ndef.ar(\grammar, {SinOsc.ar(freq: 321, mul: 0.5)}).playN([0,1,2,3])
 play{|pip=1e-3|Klang.ar(`[(_.linexp(0,2e4,99,1e4))!2e4,pip]).tanh!2}
 
 2pi, 0.43, 0x123, 12e3, 3e-2
-"strst 3pi \r " ~tilde _that symbolArg: \symb 'symb'
+"strst" ~tilde _that symbolArg: \symb 'symb'
 
 $a $/ $\\ ($ )
 
