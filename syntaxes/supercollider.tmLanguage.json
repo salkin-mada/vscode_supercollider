@@ -72,7 +72,7 @@
 			"include": "text operator"
 		},
 		{
-			"include": "#line-args"
+			"include": "#pipe-args"
 		},
 		{
 			"include": "#text name"
@@ -190,7 +190,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.supercollider",
-					"match": "^\\$\\?."
+					"match": "\\$\\\\?."
 				}
 			]
 		},
@@ -269,7 +269,7 @@
 				}
 			]
 		},
-		"line-args": {
+		"pipe-args": {
 			"patterns": [
             {
 				"name": "keyword.control.supercollider",
