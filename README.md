@@ -21,9 +21,8 @@ Possibly redundant; this extension is tested on Linux (Debian, Ubuntu), MacOs an
 
 **Enjoy!**
 
-![example1](images/example1.png "example1")
-![example2](images/example2.png "example2")
-![example3](images/example3.png "example3")
+![example](images\exampleMonokai.png "Monokai")
+![example](images\exampleSolarizedLight.png "SolarizedLight")
 
 ## Known Issues
 
