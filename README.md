@@ -6,8 +6,7 @@ SuperCollider syntax grammars for VSCode
 
 the language-supercollider extension is an enhanced flavor of [SuperCollider](https://supercollider.github.io/) syntax highlighting for [VS Code](https://code.visualstudio.com/).
 
-converted from the supercollider-source with some additions
-https://github.com/supercollider/supercollider/blob/develop/HelpSource/editor.js
+converted from the [supercollider-source](https://github.com/supercollider/supercollider/blob/develop/HelpSource/editor.js) with some additions
 
 install from [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/vscode) or clone/place this repo in ~\.vscode\extensions\
 
